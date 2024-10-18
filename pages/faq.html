@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/modal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="regModal" class="modal">
+      <span id="closeReg" class="close-button">&times;</span>
+      <form class="registration-form">
+        <label for="email">Електронна пошта</label>
+        <input type="email" id="email" Reg name="email" required />
+
+        <label for="password">Пароль</label>
+        <input type="password" id="password" Reg name="password" required />
+
+        <label for="lastName">Прізвище</label>
+        <input type="text" id="lastName" Reg name="lastName" required />
+
+        <label for="firstName">Ім’я</label>
+        <input type="text" id="firstName" Reg name="firstName" required />
+
+        <label for="middleName">По батькові</label>
+        <input type="text" id="middleName" Reg name="middleName" />
+
+        <label for="birthDate">Дата народження</label>
+        <input type="date" id="birthDate" Reg name="birthDate" required />
+
+        <label for="group">Виберіть групу</label>
+        <select id="group" Reg name="group" required>
+          <option value="client">Клієнт</option>
+          <option value="employee">Працівник</option>
+          <option value="manager">Менеджер</option>
+        </select>
+
+        <label for="file">Завантажте файл (PDF)</label>
+        <input
+          type="file"
+          id="fileReg"
+          name="file"
+          accept="application/pdf"
+          required
+        />
+
+        <button type="submit">Зареєструватися</button>
+      </form>
+    </div>
+    <div id="signInModal" class="modal">
+      <form class="registration-form">
+        <span id="closeSignIn" class="close-button">&times;</span>
+        <label for="email">Електронна пошта</label>
+        <input type="email" id="emailSignIn" name="email" required />
+
+        <label for="password">Пароль</label>
+        <input type="password" id="passwordSignIn" name="password" required />
+
+        <button type="submit">Увійти</button>
+      </form>
+    </div>
+    <header>
+      <div class="logo">
+        <img src="/img/logo.svg" alt="Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Головна</a></li>
+          <li><a href="about-us.html">Про нас</a></li>
+          <li><a href="products.html">Товари</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <ul class="header-buttons">
+        <li>
+          <button id="openReg" class="header-btn">Реєстрація</button>
+        </li>
+        <li><button id="openSignIn" class="header-btn">Авторизація</button></li>
+      </ul>
+    </header>
+    <div class="faq-container">
+      <h2>Часті запитання</h2>
+      <div class="faq-item">
+        <h3>Як замовити препарати?</h3>
+        <p>
+          Ви можете зробити замовлення онлайн через нашу CRM-систему або
+          зателефонувавши за номером.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Чи є у вас програма лояльності?</h3>
+        <p>
+          Так, ми пропонуємо програму лояльності для корпоративних клієнтів.
+        </p>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
