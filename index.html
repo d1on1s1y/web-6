@@ -25,6 +25,14 @@
         <label for="password">Пароль</label>
         <input type="password" id="password" Reg name="password" required />
 
+        <label for="phone">Номер телефону</label>
+        <input
+          type="text"
+          name="phone"
+          id="phone"
+          placeholder="+38 (___) ___-__-__"
+          required
+        />
         <label for="lastName">Прізвище</label>
         <input type="text" id="lastName" Reg name="lastName" required />
 
@@ -37,6 +45,21 @@
         <label for="birthDate">Дата народження</label>
         <input type="date" id="birthDate" Reg name="birthDate" required />
 
+        <div class="gender-selection">
+          <label>
+            <input type="radio" name="gender" value="male" required />
+            Чоловік
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" required />
+            Жінка
+          </label>
+          <label>
+            <input type="radio" name="gender" value="other" required />
+            Інше
+          </label>
+        </div>
+
         <label for="group">Виберіть групу</label>
         <select id="group" Reg name="group" required>
           <option value="client">Клієнт</option>
@@ -45,13 +68,7 @@
         </select>
 
         <label for="file">Завантажте файл (PDF)</label>
-        <input
-          type="file"
-          id="fileReg"
-          name="file"
-          accept="application/pdf"
-          required
-        />
+        <input type="file" id="fileReg" name="file" accept="application/pdf" />
 
         <button type="submit">Зареєструватися</button>
       </form>
@@ -214,5 +231,6 @@
       </div>
     </footer>
     <script type="module" src="main.js"></script>
+    <script type="text/javascript" src="/js/jquery.inputmask.js"></script>
   </body>
 </html>

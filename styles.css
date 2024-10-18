@@ -270,3 +270,20 @@ footer a {
 .faq-item p {
   margin: 0;
 }
+.gender-selection {
+  background-color: var(--main);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  gap: 15px;
+}
+
+.gender-selection label {
+  color: var(--text-color);
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.gender-selection input[type="radio"] {
+  margin-right: 5px;
+}
