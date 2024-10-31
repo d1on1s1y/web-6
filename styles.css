@@ -287,3 +287,16 @@ footer a {
 .gender-selection input[type="radio"] {
   margin-right: 5px;
 }
+
+.error-message {
+  display: none; /* Спочатку приховано */
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.incorrect-input{
+  display: block;
+}
+
+

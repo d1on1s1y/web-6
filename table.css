@@ -7,132 +7,114 @@
 
 
 }
+/*  ===== Выдвигающаяся верхняя панель
+*   =========================================
+*   Базовый контейнер выдвижной панели */
+.top-panel {
+  background: var(--secondary);
+  position: absolute;
+  top: -750px;
+  left: 0;
+  width: 100%;
+  height: 750px;
+  padding: 0;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  transition: top 400ms cubic-bezier(0.17,0.04,0.03,0.94);
+  z-index: 10
+}
+/* Блок сообщения */
+.message {
+  color: #fff;
+  font-weight: 300;
+  position: relative;
+  padding: 3em 2em;
+  margin: 0 auto;
+  max-width: 980px
+  
+}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color:   var(--main);
-  }
-  /* 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  } */
-  
-  /* h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  } */
-  
-  .table-container {
-    overflow-x: auto;
-    margin-bottom: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-  }
-  
-  /* thead {
-    background-color: #4CAF50;
-    color: white;
-  } */
-  
-  th, td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  th {
-    min-width: 100px;
-  }
-  
-  img {
-    width: 50px;
-    height: auto;
-  }
-  
-  button {
-    padding: 8px 12px;
-    margin-right: 5px;
-    border: none;
-    cursor: pointer;
-    background-color: var(--main);
-    color: var(--text-color);
-    border-radius: 4px;
-  }
-  
-  /* .view-btn {
-    background-color: #4CAF50;
-  }
-  
-  .edit-btn {
-    background-color: #2196F3;
-  }
-  
-  .delete-btn {
-    background-color: #f44336;
-  } */
-  
-  
-  @media (max-width: 768px) {
-    th, td {
-        padding: 8px;
-    }
-  
-    img {
-        width: 40px;
-    }
-  
-    button {
-        padding: 6px 8px;
-        margin-right: 2px;
-    }
-  
-  
-    td {
-        white-space: nowrap;
-    }
-  
-    td button {
-        display: inline-block;
-        margin-bottom: 0;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    th, td {
-        font-size: 14px;
-        padding: 6px;
-    }
-  
-    button {
-        padding: 5px 6px;
-    }
-  
-    img {
-        width: 30px;
-    }
-  
-    td {
-        white-space: nowrap;
-    }
-  
-    td button {
-        display: inline-block;
-        margin-bottom: 0;
-    }
-  
-    .table-container {
-        overflow-x: scroll;
-    }
-  }
+/* Переключатель панели */
+label.btn {
+  display: block;
+  position: absolute;
+  right: 50px;
+  top: 0;
+  cursor: pointer;
+  background: #2bbbad;
+  width: 50px;
+  border-radius: 0 0 5px 5px;
+  padding: 8px 5px;
+  color: #FFF;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  transition: all 400ms cubic-bezier(0.17,0.04,0.03,0.94);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  z-index: 9999
+}
+/* Переключатель при наведении */
+label.btn:hover {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15)
+}
+/* Стрелка переключателя вниз */
+label.btn:after {
+  content: '\f078';
+  font: normal 18px/1 FontAwesome;
+  text-decoration: inherit
+}
+/* Активация панели */
+.open:checked ~ .top-panel {
+  top: 0
+}
+
+.open:checked ~ label.btn {
+  top: 750px
+}
+/* Смещение контейнера контента страницы */
+.open:checked ~ .container {
+  margin-top: 300px
+}
+/* Цвет переключателя при клике */
+.open:checked + label.btn {
+  background: #dd6149
+}
+/* Стрелка переключателя вверх*/
+.open:checked + label.btn:after {
+  content: '\f077';
+  font: normal 18px/1 FontAwesome
+}
+/* Контейнер контента */
+/* .container {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  transition: margin 400ms cubic-bezier(0.17,0.04,0.03,0.94);
+  padding: 5em 3em
+} */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--main);
+}
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid var(--secondary);
+  color: var(--text-color);
+}
+
+.table thead th {
+  background-color: var(--main);
+  color: var(--text-color);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table tbody tr {
+  background-color: var(--main);
+  color: var(--text-color);
+}

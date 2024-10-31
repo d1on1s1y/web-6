@@ -9,6 +9,7 @@
     "private": true,
     "dependencies": {
         "imask": "^7.6.1",
-        "jquery.inputmask": "^3.3.4"
+        "jquery.inputmask": "^3.3.4",
+        "nanoid": "^5.0.8"
     }
 }
