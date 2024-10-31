@@ -1,6 +1,5 @@
-$(document).ready(function () {
-    $("#phone").inputmask({"mask": "+38 (999) 999-99-99"});
-});
+// import IMask from '.mask';
+
 const regModal = document.getElementById('regModal');
 const openReg = document.getElementById('openReg');
 const closeReg = document.getElementById('closeReg');
@@ -11,6 +10,20 @@ const signInModal = document.getElementById('signInModal')
 const openSignIn = document.getElementById('openSignIn')
 const closeSignIn = document.getElementById('closeSignIn')
 const signInForm = signInModal.lastElementChild
+
+
+
+
+
+
+console.log();
+
+const maskInput = regForm.querySelector('#phone');
+const maskOptions = {
+  mask: '+{38}(000)000-00-00'
+};
+const mask = IMask(maskInput, maskOptions);
+
 
 const hideForm = (modal, form) => {
   modal.classList.remove('open');
@@ -38,3 +51,6 @@ openBtn.addEventListener('click', ()=> {
 
 addEvtListeners(regModal, openReg, closeReg, regForm)
 addEvtListeners(signInModal, openSignIn, closeSignIn,signInForm)
+
+
+//приметка для меня: сделаны в лабе пункты 1,2
